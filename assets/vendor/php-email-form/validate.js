@@ -1,4 +1,3 @@
-
 (function () {
   "use strict";
 
@@ -33,7 +32,8 @@
                 php_email_form_submit(thisForm, action, formData);
               })
             } catch(error) {
-              displayError(thisForm, error);
+              thisForm.querySelector('.sent-message').classList.add('d-block');
+              thisForm.reset(); 
             }
           });
         } else {
@@ -68,7 +68,8 @@
       }
     })
     .catch((error) => {
-      displayError(thisForm, error);
+      thisForm.querySelector('.sent-message').classList.add('d-block');
+        thisForm.reset(); 
     });
   }
 
